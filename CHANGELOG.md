@@ -10,6 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 This release includes several dependency bumps. It is compatible with latest
 `hashicorp/kubernetes` provider & has a minimum version of `1.0.0` for Terraform.
 
+### Changed
+
+- Terraform 1.0.x is required to use this module.
+
+### Updated
+
+- Hashicorp/kubernetes provider version. (2.4.1)
+- AWS node termination handler version. (1.13.2)
+
 ## [3.0.0] - 2020-10-23
 
 This is the first release that requires at least Terraform 0.13.0.
