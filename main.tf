@@ -1,7 +1,7 @@
 locals {
   k8s_namespace                         = "kube-system"
   k8s_pod_annotations                   = var.k8s_pod_annotations
-  node_termination_handler_docker_image = "docker.io/amazon/aws-node-termination-handler:v${var.node_termination_handler_version}"
+  node_termination_handler_docker_image = "public.ecr.aws/aws-ec2/aws-node-termination-handler:v${var.node_termination_handler_version}"
   node_termination_handler_version      = var.node_termination_handler_version
 }
 
