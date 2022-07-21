@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.3] - 2022-07-21
+
+Upgrade AWS Node Termination Handler to 1.16.5
+Upgrade Kubernetes TF provider to 2.12.1
+
 ## [3.0.2] - 2021-09-22
 
 Upgrade AWS Node Termination Handler to 1.13.3
