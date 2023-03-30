@@ -63,13 +63,13 @@ resource "kubernetes_cluster_role_binding_v1" "this" {
   subject {
     api_group = ""
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account.this.metadata[0].name
-    namespace = kubernetes_service_account.this.metadata[0].namespace
+    name      = kubernetes_service_account_v1.this.metadata[0].name
+    namespace = kubernetes_service_account_v1.this.metadata[0].namespace
   }
   role_ref {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
-    name      = kubernetes_cluster_role.this.metadata[0].name
+    name      = kubernetes_cluster_role_v1.this.metadata[0].name
   }
 }
 
@@ -282,7 +282,7 @@ resource "kubernetes_daemon_set_v1" "this" {
         host_network         = true
         node_selector        = var.k8s_node_selector
         priority_class_name  = "system-node-critical"
-        service_account_name = kubernetes_service_account.this.metadata[0].name
+        service_account_name = kubernetes_service_account_v1.this.metadata[0].name
         dynamic "toleration" {
           for_each = var.k8s_node_tolerations
           content {
