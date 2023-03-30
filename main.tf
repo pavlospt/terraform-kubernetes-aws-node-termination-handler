@@ -5,7 +5,7 @@ locals {
   node_termination_handler_version      = var.node_termination_handler_version
 }
 
-resource "kubernetes_service_account" "this" {
+resource "kubernetes_service_account_v1" "this" {
   automount_service_account_token = true
   metadata {
     labels = {
@@ -17,7 +17,7 @@ resource "kubernetes_service_account" "this" {
   }
 }
 
-resource "kubernetes_cluster_role" "this" {
+resource "kubernetes_cluster_role_v1" "this" {
   metadata {
     labels = {
       "app.kubernetes.io/managed-by" = "terraform"
@@ -52,7 +52,7 @@ resource "kubernetes_cluster_role" "this" {
   }
 }
 
-resource "kubernetes_cluster_role_binding" "this" {
+resource "kubernetes_cluster_role_binding_v1" "this" {
   metadata {
     labels = {
       "app.kubernetes.io/managed-by" = "terraform"
@@ -73,7 +73,7 @@ resource "kubernetes_cluster_role_binding" "this" {
   }
 }
 
-resource "kubernetes_daemonset" "this" {
+resource "kubernetes_daemon_set_v1" "this" {
   metadata {
     annotations = {
       "field.cattle.io/description" = "AWS Node Termination Handler"
