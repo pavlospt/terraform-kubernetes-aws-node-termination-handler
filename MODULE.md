@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.19.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.23.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | >= 2.19.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | >= 2.23.0 |
 
 ## Modules
 
@@ -20,10 +20,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_cluster_role.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role) | resource |
-| [kubernetes_cluster_role_binding.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding) | resource |
-| [kubernetes_daemonset.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/daemonset) | resource |
-| [kubernetes_service_account.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service_account) | resource |
+| [kubernetes_cluster_role_binding_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding_v1) | resource |
+| [kubernetes_cluster_role_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_v1) | resource |
+| [kubernetes_daemon_set_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/daemon_set_v1) | resource |
+| [kubernetes_service_account_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service_account_v1) | resource |
 
 ## Inputs
 
@@ -41,7 +41,7 @@ No modules.
 | <a name="input_k8s_pod_annotations"></a> [k8s\_pod\_annotations](#input\_k8s\_pod\_annotations) | Additional annotations to be added to the Pods. | `map(string)` | `{}` | no |
 | <a name="input_metadata_tries"></a> [metadata\_tries](#input\_metadata\_tries) | The number of times to try requesting metadata. If you would like 2 retries, set metadata-tries to 3. | `number` | `3` | no |
 | <a name="input_node_termination_grace_period"></a> [node\_termination\_grace\_period](#input\_node\_termination\_grace\_period) | Period of time in seconds given to each NODE to terminate gracefully. Node draining will be scheduled based on this value to optimize the amount of compute time, but still safely drain the node before an event. | `string` | `"120"` | no |
-| <a name="input_node_termination_handler_version"></a> [node\_termination\_handler\_version](#input\_node\_termination\_handler\_version) | The version to use. See https://github.com/aws/aws-node-termination-handler/releases for available versions | `string` | `"1.18.2"` | no |
+| <a name="input_node_termination_handler_version"></a> [node\_termination\_handler\_version](#input\_node\_termination\_handler\_version) | The version to use. See https://github.com/aws/aws-node-termination-handler/releases for available versions | `string` | `"1.20.0"` | no |
 | <a name="input_pod_termination_grace_period"></a> [pod\_termination\_grace\_period](#input\_pod\_termination\_grace\_period) | Period of time in seconds given to each POD to terminate gracefully. If negative, the default value specified in the pod will be used. | `string` | `"-1"` | no |
 | <a name="input_taint_node"></a> [taint\_node](#input\_taint\_node) | If true, nodes will be tainted when an interruption event occurs. | `bool` | `false` | no |
 | <a name="input_webhook_headers"></a> [webhook\_headers](#input\_webhook\_headers) | If specified, replaces the default webhook headers. | `map(string)` | <pre>{<br>  "Content-type": "application/json"<br>}</pre> | no |
